@@ -21,18 +21,26 @@ Filter and search criterias are persisted in the URL to allow sharing a subset o
 1. Run the project portal on a local web server
 
 ``` shell script
-react-scripts start
+cd frontend
+npm install
+npm start
+```
+
+or 
+
+``` shell script
+docker-compose up -d 
 ```
 
 > *Note:* a browser window will open automatically
 
-4. Start developing!
+1. Start developing!
 
 ## Configuration
 
 The portal uses a static ```repos.json``` file with mock data for testing and developing purposes. In a productive environment, consider adding an automated crawler script that fetches all InnerSource projects as outlined in the following picture:
 
-![Crawling InnerSource projects](public/images/ecosystem.png)
+![Crawling InnerSource projects](frontend/public/images/ecosystem.png)
 
 To do so, apply the following steps:
 
