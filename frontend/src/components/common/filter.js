@@ -12,7 +12,7 @@ import { Context } from '../../store/store'
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        marginTop: '20px', 
+        marginTop: '20px',
         [theme.breakpoints.up('md', 'lg')]: {
             width: '70%'
         },
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     },
     viewOptionsItem: {
         display: 'inline-block',
-        verticalAlign: 'middle' 
+        verticalAlign: 'middle'
     },
     iconSize: {
         fontSize: '1.2rem'
@@ -89,11 +89,11 @@ const Filter = () => {
         dispatch({ type: 'IS_LOADING', payload: true })
         let hashURI, viewOption
         viewOption = state.listView ? "list" : "card"
-        
+
         let filterData = []
 
         if (scope === "language") {
-            
+
             let sortVal = sortList.filter( obj => obj.name === state.sortBy )
 
             if ( hashValue === 'All' ) {
@@ -106,7 +106,7 @@ const Filter = () => {
                 })
             }
 
-            filterData = sortBy( filterData, sortVal[0].value ) 
+            filterData = sortBy( filterData, sortVal[0].value )
 
             hashURI = '?display='+encodeURIComponent(viewOption)+'&sort='+encodeURIComponent(state.sortBy)+'&lang='+encodeURIComponent(hashValue)
 
@@ -116,7 +116,7 @@ const Filter = () => {
 
             let sortVal = sortList.filter( obj => obj.name === hashValue )
 
-            filterData = sortBy(state.filteredData, sortVal[0].value ) 
+            filterData = sortBy(state.filteredData, sortVal[0].value )
 
             hashURI = '?display='+encodeURIComponent(viewOption)+'&sort='+encodeURIComponent(hashValue)+'&lang='+encodeURIComponent(state.filteredLang)
 
@@ -156,9 +156,9 @@ const Filter = () => {
             <FormControl className={classes.formControl}>
 
             <FormHelperText>Filter by Languages:</FormHelperText>
-                <Select 
-                    value={state.filteredLang} 
-                    onChange={(event) => updateHash('language', event.target.value)} 
+                <Select
+                    value={state.filteredLang}
+                    onChange={(event) => updateHash('language', event.target.value)}
                     name="language"
                 >
                     { state.languages.map( lang  => <MenuItem value={lang}>{lang}</MenuItem> ) }
@@ -177,17 +177,17 @@ const Filter = () => {
             </FormControl>
 
             <FormControl className={classes.formControl}>
-                <TextField 
-                    id="standard-basic" 
+                <TextField
+                    id="standard-basic"
                     className={classes.textField}
-                    label={`Search ${state.filteredData.length} projects...`} 
+                    label={`Search ${state.filteredData.length} projects...`}
                     onChange={filterList}
                 />
             </FormControl>
 
             <FormControl >
                 <div className={classes.viewOptionsContainer}>
-                    <i 
+                    <i
                         className={`fa fa-th ${classes.iconSize} ${classes.viewOptionsItem}`}
                         style={{ color: !state.listView ? `#2196F3` : `#444444` }}
                     ></i>
@@ -198,7 +198,7 @@ const Filter = () => {
                         name="ListView"
                     />
                     </div>
-                    <i 
+                    <i
                         className={`fa fa-th-list ${classes.iconSize} ${classes.viewOptionsItem}`}
                         style={{ color: state.listView ? `#2196F3` : `#444444` }}
                     ></i>

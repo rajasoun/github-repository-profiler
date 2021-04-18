@@ -76,9 +76,9 @@ const useStyles = makeStyles({
         textAlign: 'center',
         overflow: 'hidden'
     },
-    
+
 })
-  
+
 const Card = (props) => {
     const classes = useStyles();
 
@@ -92,35 +92,35 @@ const Card = (props) => {
     }
 
     let data = state.filteredData
-    
+
     return (
         <Grid container spacing={3}>
             { data.map( ele => (
-                <Grid 
-                    container 
-                    item 
-                    xs={12} 
-                    sm={6} 
-                    md={4} 
-                    lg={4} 
-                    key={ele.id} 
+                <Grid
+                    container
+                    item
+                    xs={12}
+                    sm={6}
+                    md={4}
+                    lg={4}
+                    key={ele.id}
                     onClick={() => showModal(ele)}
                 >
                     <Typography component='div' className={classes.card}>
-                        <Typography 
-                            component='img' 
-                            src={ele.owner.avatar_url} 
-                            alt="Avatar" 
-                            className={classes.avatar} 
+                        <Typography
+                            component='img'
+                            src={ele.owner.avatar_url}
+                            alt="Avatar"
+                            className={classes.avatar}
                         />
                         <Typography component='div' className={classes.container}>
                             <Typography className={classes.title}>
                                 {ele.name}
                             </Typography>
-                            <Typography 
-                                component='a' 
-                                className={classes.link}  
-                                href={ele.html_url} 
+                            <Typography
+                                component='a'
+                                className={classes.link}
+                                href={ele.html_url}
                                 target="_blank"
                             >
                                 {ele.full_name}
@@ -141,9 +141,9 @@ const Card = (props) => {
                                 <GetRepoLanguage language={ele.language}/>
                             </Typography>
                         </Typography>
-                        <Typography 
-                            className={classes.footer} 
-                            component='a' 
+                        <Typography
+                            className={classes.footer}
+                            component='a'
                             href={ele.html_url}
                         >
                             contribute

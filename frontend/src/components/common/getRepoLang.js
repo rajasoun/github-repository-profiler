@@ -7,7 +7,7 @@ const CustomTooltip = withStyles((theme) => ({
         fontSize: theme.typography.pxToRem(14),
     },
 }))(Tooltip);
-  
+
 // helper function to display each language in a different static color
 const stringToColor = (sString) => {
 	seedrandom(sString);
@@ -57,9 +57,9 @@ const GetRepoLanguage = (props) => {
 	// a pseudo-random color coding and the shortened text
 	return (
         <CustomTooltip title={`Language: ${sLanguage}`} arrow placement="top-start" >
-            <Avatar 
+            <Avatar
                 style={{
-					backgroundColor: (sLanguageShort !== "N/A" ?  stringToColor(sLanguage) : ""), 
+					backgroundColor: (sLanguageShort !== "N/A" ?  stringToColor(sLanguage) : ""),
 					fontSize: sFontSize,
 					width: '2rem',
 					height: '2rem',

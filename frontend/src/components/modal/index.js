@@ -119,8 +119,8 @@ const CustomDialog = (props, ref) => {
 
     const getHumanReadableDate = (date) => {
         return (
-            new Date(date).toLocaleString('default', { month: 'long' }) + ' ' + 
-            new Date(date).getDate() + ' ' + 
+            new Date(date).toLocaleString('default', { month: 'long' }) + ' ' +
+            new Date(date).getDate() + ' ' +
             new Date(date).getFullYear()
         )
     }
@@ -128,10 +128,10 @@ const CustomDialog = (props, ref) => {
     return (
         <div ref={customRef}>
             { props.data !== undefined &&
-                <Dialog 
+                <Dialog
                     fullWidth={true}
-                    onClose={handleClose} 
-                    aria-labelledby="customized-dialog-title" 
+                    onClose={handleClose}
+                    aria-labelledby="customized-dialog-title"
                     open={open}
                     maxWidth='md'
                 >
@@ -139,9 +139,9 @@ const CustomDialog = (props, ref) => {
                     <DialogContent>
                     <Grid container >
                         <Grid item xs={4}>
-                            <Avatar 
-                                alt={data.data.name} 
-                                src={data.data.owner.avatar_url} 
+                            <Avatar
+                                alt={data.data.name}
+                                src={data.data.owner.avatar_url}
                                 className={classes.large}
                             />
                             <Typography component='div' className={classes.iconsContainer}>
@@ -160,9 +160,9 @@ const CustomDialog = (props, ref) => {
                         <Grid item xs={8}>
                             <Grid container >
                                 <Grid item xs={12}>
-                                    <Typography 
-                                        component='h4' 
-                                        variant='h4' 
+                                    <Typography
+                                        component='h4'
+                                        variant='h4'
                                         className={classes.capitalize}
                                     >
                                         {data.data.name}
@@ -171,10 +171,10 @@ const CustomDialog = (props, ref) => {
                             </Grid>
                             <Grid container className={classes.customSpacing} >
                                 <Grid item xs={12}>
-                                    <Typography 
-                                        component='a' 
-                                        className={classes.link} 
-                                        href={data.data.html_url} 
+                                    <Typography
+                                        component='a'
+                                        className={classes.link}
+                                        href={data.data.html_url}
                                         target="_blank"
                                     >
                                         {data.data.full_name}
@@ -193,12 +193,12 @@ const CustomDialog = (props, ref) => {
                                     </Typography>
                                 </Grid>
                                 {
-                                    data.data.topics ? data.data.topics.map( 
-                                        (topic, index) => 
-                                            <Grid 
-                                                key={index} 
-                                                xs={false} 
-                                                item 
+                                    data.data.topics ? data.data.topics.map(
+                                        (topic, index) =>
+                                            <Grid
+                                                key={index}
+                                                xs={false}
+                                                item
                                                 className={classes.customSpacing}
                                             >
                                                 <Typography className={classes.label}>{topic}</Typography>
@@ -213,13 +213,13 @@ const CustomDialog = (props, ref) => {
                                     </Typography>
                                 </Grid>
                                 {
-                                    data.data._InnerSourceMetadata.skills ? 
-                                    data.data._InnerSourceMetadata.skills.map( 
-                                        (skill, index) => 
-                                            <Grid 
-                                                key={index} 
-                                                xs={12} 
-                                                item 
+                                    data.data._InnerSourceMetadata.skills ?
+                                    data.data._InnerSourceMetadata.skills.map(
+                                        (skill, index) =>
+                                            <Grid
+                                                key={index}
+                                                xs={12}
+                                                item
                                                 className={classes.typoPaddingBottom}
                                             >
                                                 <Typography variant='body1' component='p'>{skill}</Typography>
@@ -234,13 +234,13 @@ const CustomDialog = (props, ref) => {
                                     </Typography>
                                 </Grid>
                                 {
-                                    data.data._InnerSourceMetadata.contributions ? 
-                                    data.data._InnerSourceMetadata.contributions.map( 
-                                        (contrib, index) => 
-                                            <Grid 
-                                                key={index} 
-                                                xs={12} 
-                                                item 
+                                    data.data._InnerSourceMetadata.contributions ?
+                                    data.data._InnerSourceMetadata.contributions.map(
+                                        (contrib, index) =>
+                                            <Grid
+                                                key={index}
+                                                xs={12}
+                                                item
                                                 className={classes.typoPaddingBottom}
                                             >
                                                 <Typography variant='body1' component='p'>{contrib}</Typography>
@@ -284,7 +284,7 @@ const CustomDialog = (props, ref) => {
                                         Average commits over the last year:
                                     </Typography>
                                 </Grid>
-                                <CreateParticipationChart 
+                                <CreateParticipationChart
                                     _InnerSourceMetadata={data.data._InnerSourceMetadata}
                                     created_at={data.data.created_at}
                                 />
@@ -292,14 +292,14 @@ const CustomDialog = (props, ref) => {
                         </Grid>
                     </Grid>
                     <br/>
-                    <Typography 
-                        className={classes.footer} 
-                        component='a' 
+                    <Typography
+                        className={classes.footer}
+                        component='a'
                         href={data.data.html_url}
                     >
                         contribute
                     </Typography>
-                    </DialogContent> 
+                    </DialogContent>
                 </Dialog>
             }
         </div>

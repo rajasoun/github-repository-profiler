@@ -71,18 +71,18 @@ const GetRepoActivity = (props) => {
 	if (_InnerSourceMetadata && typeof score === "number") {
 		sScoreIndicator = getActivityLogo(score)
 	}
-    
+
     return (
         <Typography component='div' className={classes.iconGroup}>
-            <Typography 
-                className={classes.icon} 
+            <Typography
+                className={classes.icon}
                 style={{ padding: props.customPadding }}
             >
                 <CustomTooltip title={`Activity: ${sScoreIndicator[0]}`} arrow placement="top-start">
-                    <img 
-                        src={`./images/activity/${sScoreIndicator[1]}`} 
-                        alt={sScoreIndicator[1]} 
-                        width="80%" 
+                    <img
+                        src={`./images/activity/${sScoreIndicator[1]}`}
+                        alt={sScoreIndicator[1]}
+                        width="80%"
                     />
                 </CustomTooltip>
             </Typography>

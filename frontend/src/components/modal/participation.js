@@ -122,9 +122,9 @@ const CreateParticipationChart = (props) => {
                 <Grid item xs={12}>
                     <Grid container>
                         <Grid xs={5} item className={classes.customSpacing}>
-                            <Paper 
+                            <Paper
                                 className={classes.paper}
-                                style={{ 
+                                style={{
                                     backgroundColor: oContext.thisWeek.color,
                                     border: `1px solid ${oContext.thisWeek.color}`
                                 }}
@@ -141,9 +141,9 @@ const CreateParticipationChart = (props) => {
                             {
                                 oContext.weeksPrevious.map( (item, index) =>
                                     <Grid key={index} xs={3} item className={classes.customSpacing}>
-                                        <Paper 
+                                        <Paper
                                             className={classes.paperSmall}
-                                            style={{ 
+                                            style={{
                                                 backgroundColor: item.color,
                                                 border: `1px solid ${item.color}`
                                             }}
@@ -161,15 +161,15 @@ const CreateParticipationChart = (props) => {
                         </Grid>
                     </Grid>
                 </Grid>
-                
+
                 <Grid item xs={12}>
                     <Grid container>
                     {
                         oContext.weeksBefore.map( (ele, index) => (
                             <Grid key={index} xs={false} item className={classes.xCustomSpacing}>
-                                <Paper 
+                                <Paper
                                     className={classes.paperXSmall}
-                                    style={{ 
+                                    style={{
                                         backgroundColor: ele.color,
                                         border: `1px solid ${ele.color}`
                                     }}

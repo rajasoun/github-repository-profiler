@@ -10,7 +10,7 @@ import { Context } from '../store/store'
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        marginTop: '20px', 
+        marginTop: '20px',
         [theme.breakpoints.up('md', 'lg')]: {
             width: '70%'
         },
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     },
     viewOptionsItem: {
         display: 'inline-block',
-        verticalAlign: 'middle' 
+        verticalAlign: 'middle'
     },
     iconSize: {
         fontSize: '1.2rem'
@@ -85,7 +85,7 @@ const App = (props) => {
                 dispatch({ type: 'SET_DATA', payload: data })
                 dispatch({ type: 'SET_FILTERED_DATA', payload: data })
                 dispatch({ type: 'SET_RECORDS_COUNT', payload: data.length })
-                
+
                 let isDisplay = queryDisplay === "list" ? true : false
                 dispatch({ type: 'IS_LIST', payload:  isDisplay })
 
@@ -101,8 +101,8 @@ const App = (props) => {
                         }
                     })
 
-                    filterData = sortBy(filterData, sortVal[0].value) 
-                    
+                    filterData = sortBy(filterData, sortVal[0].value)
+
                     dispatch({ type: 'UPDATE_FILTERED_LANG', payload: queryLang })
                     dispatch({ type: 'UPDATE_SORTBY', payload: querySort })
                     dispatch({ type: 'SET_FILTERED_DATA', payload: filterData})
@@ -130,8 +130,8 @@ const App = (props) => {
             <Header projectCount={state.recordsCount} />
             <Container className={classes.container}>
                 <Filter />
-                { 
-                    state.loading ? 
+                {
+                    state.loading ?
                         <CircularProgress /> :
                         !state.listView ? <Card /> : <ListView />
                 }

@@ -27,9 +27,9 @@ const CustomTooltip = withStyles((theme) => ({
 const IconGroup = (props) => {
     const classes = useStyles(props)
     return (
-        <Typography 
-            component='div' 
-            className={classes.iconGroup} 
+        <Typography
+            component='div'
+            className={classes.iconGroup}
             style={{ float: props.float, padding: props.customPadding}}
         >
             <Typography className={classes.icon}>

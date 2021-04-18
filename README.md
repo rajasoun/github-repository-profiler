@@ -1,4 +1,4 @@
-# GitHub Profiler 
+# GitHub Profiler
 
 Project Portal for implementing Shift Left Security and [InnerSource portal pattern](https://github.com/InnerSourceCommons/InnerSourcePatterns/blob/master/patterns/2-structured/innersource-portal.md) by the [InnerSource Commons community](http://innersourcecommons.org/).
 
@@ -6,7 +6,7 @@ Profiles all InnerSource GitHub projects of a company in an interactive and easy
 
 ## Description
 
-Each tile in the project portal represents an InnerSource project. 
+Each tile in the project portal represents an InnerSource project.
 The list of projects can be filtered by programming language, sorted by various KPIs, and searched using a keyword.
 Filter and search criterias are persisted in the URL to allow sharing a subset of projects easily. Entries in the portal can be sorted by the [Repository Activity Score](https://github.com/InnerSourceCommons/InnerSourcePatterns/blob/master/patterns/2-structured/repository-activity-score.md).
 
@@ -15,7 +15,7 @@ Filter and search criterias are persisted in the URL to allow sharing a subset o
 
 
 1. Fork and clone this repository
-  
+
 1. Refer [SLS.md](./SLS.md) for setting up Visual Studo Code [Remote Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension and use docker as a full-featured development environment.
 
 1. Run the project portal on a local web server
@@ -42,18 +42,18 @@ To do so, apply the following steps:
    ?q=topic:inner-source
    ```
 
-   The API returns a list of projects with essential information like name, avatar, description, and statistics that we can enrich with additional fields. 
-   
-   > *Note:* You can optionally limit the result set by adding `is:public` or `is:private` to the query, depending on how InnerSource repositories are characterized in your environment. 
+   The API returns a list of projects with essential information like name, avatar, description, and statistics that we can enrich with additional fields.
+
+   > *Note:* You can optionally limit the result set by adding `is:public` or `is:private` to the query, depending on how InnerSource repositories are characterized in your environment.
 
 2. For each resulting project add a key ```_InnerSourceMetadata``` to the result from the GitHub API call and fill it with additional metadata about the project:
 
    * Check if there is a file ```innersource.json``` in the repository and add all keys directly below ```_InnerSourceMetadata```.
 
-   * Query GitHub for the [weekly commit count](https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#get-the-weekly-commit-count) (subset "all") and add it with the key `participation` 
+   * Query GitHub for the [weekly commit count](https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#get-the-weekly-commit-count) (subset "all") and add it with the key `participation`
 
    * (Optional) Check if there are contribution guidelines and add the file name with the key `guidelines` (e.g. `CONTRIBUTING.md`). If specified, the *Contribute* button will link directly to the file instead of the repository root.
-   
+
    * (Optional) Query GitHub [topics](https://docs.github.com/en/rest/reference/repos#get-all-repository-topics) and add the array of topics with the key `topics` for each repo to allow searching projects by topic and displaying them on the detail popup.
 
    * (Optional) Calculate the [Repository Activity Score](https://github.com/InnerSourceCommons/InnerSourcePatterns/blob/master/patterns/2-structured/repository-activity-score.md) to define a meaningful order for the projects. Sort entries by score descending. Add it with the key `score`
@@ -80,6 +80,7 @@ We use the following open source frameworks to create the portal:
 
 ## Acknowledgements
 
-Thanks to 
-* [InnerSourceCommons Pattern Group](https://github.com/InnerSourceCommons/InnerSourcePatterns) 
+Thanks to
+* [InnerSourceCommons Pattern Group](https://github.com/InnerSourceCommons/InnerSourcePatterns)
 * [SAP Project Portal For Innersource](https://github.com/SAP/project-portal-for-innersource)
+* [Shift Left Security Adoption](https://github.com/rajasoun/cookiecutter-shift-left-security)

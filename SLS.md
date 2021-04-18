@@ -1,6 +1,6 @@
 # Getting Started
 
-Institutionalizing Shift Left Security tools for 
+Institutionalizing Shift Left Security tools for
 1. Secrets Detection
 1. Static Application Security Testing (SAST) Scan
 
@@ -19,7 +19,7 @@ Remote Containters allows us to isolate each project’s development environment
 1. Isolation: Workspaces and their dependencies are isolated from each other
 1. Security: Prevents malicious dependencies from installing malware or reading your files.
 
-Each project has a .devcontainer folder. 
+Each project has a .devcontainer folder.
 The .devcontainer folder contains the Dockerfile and devcontainer.json configuration for the development environment.
 
 ![Remote Container](https://code.visualstudio.com/assets/docs/remote/containers/architecture-containers.png)
@@ -46,7 +46,7 @@ The .devcontainer folder contains the Dockerfile and devcontainer.json configura
 
 ## Prerequisites - Remote development in Containers
 
-Running Visual Studio Code in a Docker container using the Remote - Containers extension. 
+Running Visual Studio Code in a Docker container using the Remote - Containers extension.
 Goto: https://code.visualstudio.com/docs/remote/containers-tutorial
 
 [Developing inside a Container](https://code.visualstudio.com/docs/remote/containers)

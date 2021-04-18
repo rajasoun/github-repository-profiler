@@ -28,8 +28,8 @@ const StyledTableRow = withStyles((theme) => ({
   root: {
     transition: 'transform .2s',
     '&:hover': {
-        MsTransform: 'scale(1.05)', 
-        WebkitTransform: 'scale(1.05)', 
+        MsTransform: 'scale(1.05)',
+        WebkitTransform: 'scale(1.05)',
         transform: 'scale(1.05)',
         cursor: 'pointer'
     },
@@ -114,16 +114,16 @@ const ListView = () => {
             <Table className={classes.table} aria-label="customized table">
                 <TableHead>
                     <StyledTableRow>
-                        { 
-                            tableHeader.map( ele => 
-                                <StyledTableCell 
-                                    align={ele.align} 
-                                    width={ele.width} 
+                        {
+                            tableHeader.map( ele =>
+                                <StyledTableCell
+                                    align={ele.align}
+                                    width={ele.width}
                                     key={ele.header}
                                 >
                                     {ele.header}
-                                </StyledTableCell> 
-                            ) 
+                                </StyledTableCell>
+                            )
                         }
                     </StyledTableRow>
                 </TableHead>
@@ -132,11 +132,11 @@ const ListView = () => {
                     data.map((row, index) => (
                         <StyledTableRow key={index} onClick={() => showModal(row)}>
                             <StyledTableCell scope="row">
-                                <Typography 
-                                    component='img' 
-                                    src={row.owner.avatar_url} 
-                                    alt="Avatar" 
-                                    className={classes.avatar} 
+                                <Typography
+                                    component='img'
+                                    src={row.owner.avatar_url}
+                                    alt="Avatar"
+                                    className={classes.avatar}
                                 />
                             </StyledTableCell>
 
@@ -144,10 +144,10 @@ const ListView = () => {
                                 <Typography className={classes.title}>
                                     {row.name}
                                 </Typography>
-                                <Typography 
-                                    component='a' 
-                                    className={classes.link}  
-                                    href={row.html_url} 
+                                <Typography
+                                    component='a'
+                                    className={classes.link}
+                                    href={row.html_url}
                                     target="_blank"
                                 >
                                     {row.full_name}
@@ -161,47 +161,47 @@ const ListView = () => {
                             </StyledTableCell>
 
                             <StyledTableCell padding="none" align="center">
-                                <IconGroup 
-                                    tooltip='Stars' 
-                                    fontName="fa-star" 
-                                    count={row.stargazers_count} 
+                                <IconGroup
+                                    tooltip='Stars'
+                                    fontName="fa-star"
+                                    count={row.stargazers_count}
                                 />
                             </StyledTableCell>
 
                             <StyledTableCell padding="none" align="center">
-                                <IconGroup 
-                                    tooltip='Issues' 
-                                    fontName="fa-exclamation-circle" 
-                                    count={row.open_issues_count} 
+                                <IconGroup
+                                    tooltip='Issues'
+                                    fontName="fa-exclamation-circle"
+                                    count={row.open_issues_count}
                                 />
                             </StyledTableCell>
 
                             <StyledTableCell padding="none" align="center">
-                                <IconGroup 
-                                    tooltip='Forks' 
-                                    fontName="fa-code-branch" 
-                                    count={row.forks_count} 
+                                <IconGroup
+                                    tooltip='Forks'
+                                    fontName="fa-code-branch"
+                                    count={row.forks_count}
                                 />
                             </StyledTableCell>
 
                             <StyledTableCell padding="none" align="center">
-                                <GetRepoActivity  
-                                _InnerSourceMetadata={row._InnerSourceMetadata}  
-                                customPadding='0 0 0 1.5rem' 
+                                <GetRepoActivity
+                                _InnerSourceMetadata={row._InnerSourceMetadata}
+                                customPadding='0 0 0 1.5rem'
                             />
                             </StyledTableCell>
 
                             <StyledTableCell padding="none" align="center">
-                                <GetRepoLanguage 
-                                    language={row.language} 
-                                    alignItem='1.5rem' 
+                                <GetRepoLanguage
+                                    language={row.language}
+                                    alignItem='1.5rem'
                                 />
                             </StyledTableCell>
 
                             <StyledTableCell padding="none">
-                                <Typography 
-                                    className={classes.footer} 
-                                    component='a' 
+                                <Typography
+                                    className={classes.footer}
+                                    component='a'
                                     href={row.html_url}
                                 >
                                     contribute
