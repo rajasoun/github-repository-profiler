@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/rajasoun/cookiecutter-shift-left-security",
-  "commit": "bb4d6f78e7ae491c40f9845af9ecfe403da2cc7b",
+  "commit": "6a958d936a334d11cfc0df63464c7f77e853960c",
   "checkout": null,
   "context": {
     "cookiecutter": {
