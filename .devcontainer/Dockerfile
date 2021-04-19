@@ -4,14 +4,6 @@
 ARG VARIANT="3"
 FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT} AS builder
 
-# Install Node.js
-ARG INSTALL_NODE="true"
-ARG NODE_VERSION="lts/*"
-RUN set -x \
-    && if [ "${INSTALL_NODE}" = "true" ]; then \
-        su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; \
-    fi
-
 # secerts management using chamber
 FROM segment/chamber:2.9.1 as chamber-builder
 

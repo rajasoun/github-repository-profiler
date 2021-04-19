@@ -4,11 +4,11 @@
   "checkout": null,
   "context": {
     "cookiecutter": {
-      "project_name": "repository-profiler",
-      "project_slug": "repository-profiler",
-      "project_description": "Profile GitHub repositories for shift left security. ",
+      "project_name": "github-repository-profiler",
+      "project_slug": "github-repository-profiler",
+      "project_description": "GitHub repository profiler for Shift Left Security Adoption",
       "security_mailer": "devsecops@icloud.com",
-      "author_full_name": "Raja. S, Arun Jose",
+      "author_full_name": "Raja. S",
       "_template": "https://github.com/rajasoun/cookiecutter-shift-left-security"
     }
   },
